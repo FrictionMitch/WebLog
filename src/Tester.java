@@ -52,4 +52,12 @@ public class Tester
         la.readFile("data/weblog1_log");
         System.out.println(la.countUniqueIPsInRange(low, high));
     }
+
+    public void testCounts() {
+        LogAnalyzer la = new LogAnalyzer();
+        la.readFile("data/short-test_log");
+        HashMap<String, Integer> counts = la.countVisitsPerIP();
+        System.out.println(counts);
+//        System.out.println(counts.size());
+    }
 }
