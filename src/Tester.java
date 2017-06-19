@@ -37,19 +37,19 @@ public class Tester
 
     public void testStatusCode(int num) {
         LogAnalyzer la = new LogAnalyzer();
-        la.readFile("data/short-test_log");
+        la.readFile("data/weblog1_log");
         la.printAllHigherThanNum(num);
     }
 
     public void testDate(String string) {
         LogAnalyzer la = new LogAnalyzer();
-        la.readFile("data/weblog-short_log");
+        la.readFile("data/weblog1_log");
         System.out.println(la.uniqueIPVisitsOnDay(string));
     }
 
     public void testStatus(int low, int high){
         LogAnalyzer la= new LogAnalyzer();
-        la.readFile("data/short-test_log");
+        la.readFile("data/weblog1_log");
         System.out.println(la.countUniqueIPsInRange(low, high));
     }
 }

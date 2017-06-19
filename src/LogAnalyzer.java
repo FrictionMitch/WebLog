@@ -34,6 +34,20 @@ public class LogAnalyzer
          }
      }
 
+    public HashMap<String, Integer> countVisitsPerIP(){
+        HashMap<String, Integer> counts = new HashMap<String, Integer>();
+//        int ipCount = 0;
+        for(LogEntry le : records) {
+            String ip = le.getIpAddress();
+            if(! counts.containsKey(ip)){
+                counts.put(ip, 1);
+            } else {
+                counts.put(ip, counts.get(ip) + 1);
+            }
+        }
+        return counts;
+    }
+
     public int countUniqueIPs(){
 //        Start an empty array list
         uniqueIPs = new ArrayList<String>();
@@ -78,7 +92,7 @@ public class LogAnalyzer
         }
 
 //        System.out.println(uniqueIP);
-//        return dayVisited;
+        System.out.println(uniqueIP.size());
         return uniqueIP;
     }
 
